@@ -1,3 +1,5 @@
+[![](https://jitpack.io/v/phdoerfler/consoletools.svg)](https://jitpack.io/#phdoerfler/consoletools)
+
 # Console Tools
 
 Who doesn't love ASCII spinners?
@@ -8,13 +10,14 @@ Who doesn't love ASCII spinners?
 
 ```scala
 resolvers += "jitpack" at "https://jitpack.io"
-libraryDependencies += "io.doerfler" % "consoletools" % "main-SNAPSHOT"
+libraryDependencies += "com.github.phdoerfler" % "consoletools" % "main-SNAPSHOT"
 ```
 
 ### Code
 
 ```scala
 import io.doerfler.console._
+import scala.concurrent.ExecutionContext.Implicits.global
 
 object Main extends App with SpinnerSupport {
   Spinner show "Searching…" whileWaitingFor seachResultF
