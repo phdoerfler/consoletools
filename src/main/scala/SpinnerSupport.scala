@@ -20,7 +20,7 @@ trait SpinnerSupport {
     case class show(message: String) {
       def whileWaitingFor[T](f: Future[T])(implicit ec: ExecutionContext): Unit = {
         val f2 = f andThen { case _ => monitor synchronized monitor.notifyAll }
-        val stream = AnsiConsole.err()
+        val stream = try { AnsiConsole.err() } catch { case cce: ClassCastException => System.err } // Workaround for using jansi with native-image
         var i = 0
         val spinner = Array('\\', '|', '/', '-')
         stream.print(f"$message%s  ")
