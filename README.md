@@ -1,4 +1,4 @@
-[![](https://jitpack.io/v/phdoerfler/consoletools.svg)](https://jitpack.io/#phdoerfler/consoletools)
+[![](https://jitpack.io/v/phdoerfler/consoletools.svg)](https://jitpack.io/#phdoerfler/consoletools/main-SNAPSHOT)
 
 # Console Tools
 
